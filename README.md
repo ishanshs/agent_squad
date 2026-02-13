@@ -4,7 +4,7 @@
 
 Agent Squad is a governance protocol that turns your IDE into a structured engineering team. Instead of one AI trying to do everything (and hallucinating), you get 8 specialized Agents—from Product Managers to Security Engineers—who check each other's work.
 
-**Optimized for:** Google Antigravity, Cursor, Windsurf, Replit, and VS Code.
+**Optimized for:** Google Antigravity, Cursor, Windsurf, Replit, VS Code, and Emergent.
 
 ---
 
@@ -33,22 +33,22 @@ The Squad was born here.
 2.  Start a session and type: `@CEO I have a new idea: [Your Idea]`.
 
 ### 2. Cursor (The "Composer" Method)
-Cursor uses `.cursor/rules` to give context to its AI.
-1.  Create a folder `.cursor/rules` in your project root.
+Cursor now uses the `.cursor/rules` standard.
+1.  Create a folder `.cursor/rules/` in your project root.
 2.  Copy all files from `personas/` into `.cursor/rules/`.
-3.  **Usage:** In Cursor Composer (Cmd+I), you can now explicitly mention agents like `@02_product` or `@000_master_protocol`.
+3.  **Usage:** In Cursor Composer (Cmd+I), explicitly mention agents like `@02_product` or `@000_master_protocol`.
 4.  *Pro Tip:* Paste the content of `01_ceo.md` into your "General Instructions" in Cursor settings for a permanent CEO mode.
 
 ### 3. Windsurf (Cascade Flow)
-Windsurf uses `.windsurf/rules` for its Cascade agent.
-1.  Create a folder `.windsurf/rules` in your project root.
+Windsurf's Cascade engine reads from `.windsurf/rules`.
+1.  Create a folder `.windsurf/rules/` in your project root.
 2.  Copy all files from `personas/` into `.windsurf/rules/`.
-3.  **Usage:** Cascade will now index these rules. Start your prompt with "Act as @CEO..." or explicitly reference the rule files.
+3.  **Usage:** Cascade will automatically index these files. Start your prompt with "Act as @CEO..." or explicitly reference the rule files.
 
 ### 4. Replit (Agent Context)
-Replit Agent reads `replit.md` to understand your project intent.
-1.  Copy the content of `personas/000_master_protocol.md` and `personas/01_ceo.md`.
-2.  Paste it into a new file named `replit.md` in your root directory.
+Replit Agent specifically looks for `replit.md` to understand project intent.
+1.  Create a new file named `replit.md` in your root directory.
+2.  Copy & Paste the content of `personas/000_master_protocol.md` and `personas/01_ceo.md` into it.
 3.  **Usage:** Replit Agent will now automatically adopt the "Zero-Budget" and "State Persistence" mindset during generation.
 
 ### 5. VS Code (GitHub Copilot)
@@ -56,6 +56,13 @@ Copilot Chat looks for `.github/copilot-instructions.md`.
 1.  Create `.github/copilot-instructions.md`.
 2.  Paste the content of `personas/000_master_protocol.md` into it.
 3.  **Usage:** Copilot will now respect the "Chain of Custody" and "No Magic Strings" rules during chat.
+
+### 6. Emergent (The "Prompt Loading" Method)
+Emergent generates full apps from a single prompt. You must "Prime" it first.
+1.  **Step 1:** Copy the content of `personas/000_master_protocol.md`.
+2.  **Step 2:** In the initial Emergent chat, paste the Protocol with this prefix:
+    > "Adopt this Governance Protocol for this session. Do not write any code until I give you a Product Goal. [PASTE PROTOCOL HERE]"
+3.  **Step 3:** Once acknowledged, paste your app idea: "Act as @Product and plan a [App Idea]."
 
 ---
 
@@ -78,6 +85,7 @@ The Squad expects this structure to exist. They use it to maintain state (Anti-H
 ├── knowledge/              # Long-term Memory (User Patterns)
 └── personas/               # The Agent Prompts (Source of Truth)
 
+```
 ## 🛑 The "Zero-Budget" Philosophy
 
 This Squad is designed for the **Indie Hacker** and **Bootstrapper**.
